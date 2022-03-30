@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %} Аварийный доступ {% endblock %}
+
+{% block content %}
+<body>
+<br>
+<div class="container">
+<div class="emblem">
+<img src="/static/img/MARS.png">
+</div>
+<h2>Аварийный доступ</h2>
+</div>
+<br>
+<div class="container">
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label }}<br>
+        {{ form.username(class="form-control") }}<br>
+        {% for error in form.username.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.username1.label }}<br>
+        {{ form.username1(class="form-control") }}<br>
+        {% for error in form.username1.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password1.label }}<br>
+        {{ form.password1(class="form-control", type="password") }}<br>
+        {% for error in form.password1.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
+</div>
+</body>
+{% endblock %}

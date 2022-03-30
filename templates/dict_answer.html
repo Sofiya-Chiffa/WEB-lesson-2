@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} Анкета {% endblock %}
+
+{% block content %}
+<body>
+<div class="container">
+    Фамилия: {{dict['surname']}}</br>
+    Имя: {{dict['name']}}</br>
+    Образование: {{dict['education']}}</br>
+    Профессия: {{dict['profession']}}</br>
+    Пол: {{dict['sex']}}</br>
+    Мотивация: {{dict['motivation']}}</br>
+    Готовы остаться на Марсе? {{dict['ready']}}
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} Список профессий {% endblock %}
+
+{% block content %}
+<body>
+<div class="container">
+    <h1>Список профессий</h1>
+    {% if ll == 'ol' %}
+    <ol>
+        {% for line in lp %}
+        <li>{{line}}
+        </li>
+        {% endfor %}
+    </ol>
+    {% elif ll == 'ul' %}
+    <ul>
+        {% for line in lp %}
+        <li>{{line}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    что-то пошло не так
+    (передан неверный параметр)
+    {% endif %}
+</div>
+</body>
+{% endblock %}

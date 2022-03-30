@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} Цвет каюты {% endblock %}
+
+{% block content %}
+<body>
+<h2 align="center">Оформление каюты</h2>
+<table>
+    <tr bgcolor="#d7d7d7">
+        <td align="center">Цвет стен</td>
+        <td align="center">Эмблема</td>
+    </tr>
+    <tr>
+    {% if age < 21 %}
+        {% if male == 'male' %}
+        <td bgcolor="#a6bdd7"></td>
+        {% else %}
+        <td bgcolor="#ffa474"></td>
+        {% endif %}
+        <td width="400"><img src="/static/img/child.png"></td>
+    {% else %}
+        {% if male == 'male' %}
+        <td bgcolor="#008cf0"></td>
+        {% else %}
+        <td bgcolor="#ff7538"></td>
+        {% endif %}
+        <td width="400"><img src="/static/img/adult.png"></td>
+    {% endif %}
+    </tr>
+</table>
+
+</body>
+{% endblock %}
